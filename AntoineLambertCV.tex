@@ -1,0 +1,273 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+%\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+
+\robustify\cftdotfill
+
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Antoine Lambert}\\
+né le 27/02/1985 à Bordeaux\\
+\textbf{\large Ingénieur de recherche et développement en informatique}\\
+\faEnvelopeO : antoine.lambert33@gmail.com & xx xxx xxxxxxxx\\
+\faMobile : ?? ?? ?? ?? ?? & xxxx xxxxx xxxxxx\\
+\url{https://scholar.google.fr/citations?user=wRrEbaAAAAAJ&hl} & 75002 Paris\\
+\url{https://github.com/anlambert}\\
+\end{tabular*}
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Formation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item
+
+  \ressubheading{Université des Sciences et Technologies Bordeaux 1}{Talence}{Doctorat en Informatique sur le thème de la Visualisation d'Information}{2009 - 2012}
+
+  \begin{itemize}
+
+    \resitem{Titre de la thèse : \emph{Visualisation interactive de graphes : élaboration et optmisation d'algorithmes à coûts computationnels élevés}}
+
+    \resitem{Laboratoire d'accueil : LaBRI (Laboratoire Bordelais de Recherche en Informatique)}
+
+    \resitem{Mention Très Honorable}
+
+    \resitem{Manuscrit accessible en ligne : \url{http://www.theses.fr/2012BOR14664}}
+
+  \end{itemize}
+
+\item
+
+  \ressubheading{Université des Sciences et Technologies Bordeaux 1}{Talence}{Master professionnel d'Informatique, spécialité Génie Logiciel}{2006 - 2008}
+
+  \begin{itemize}
+
+    \resitem{Mention Bien}
+
+  \end{itemize}
+
+\item
+
+  \ressubheading{Université des Sciences et Technologies Bordeaux 1}{Talence}{Licence d'Informatique}{2003 - 2006}
+
+  \begin{itemize}
+
+    \resitem{Mention Bien}
+
+  \end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Expérience professionelle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item
+  \ressubheading{Thales Services SAS}{Vélizy Villacoublay}{Ingénieur en développement Informatique}{Depuis Septembre 2013}
+
+  En mission au CeNTAI (Centre de Traitement et d’Analyse de l’Information), laboratoire d'études amonts de Thales Communications \& Security sur les technologies Big Data :
+  \begin{itemize}
+    \resitem{Chargé des travaux de visualisation de grandes masses de données au sein du laboratoire}
+    \resitem{Responsable du développement et de la maintenance du système de visualisation orienté grands graphes associé au projet OSIntLab (plateforme de veille sur les réseaux sociaux)}
+    \resitem{Travaux sur la visualisation de grands graphes sur le Web (portage du framework \emph{Tulip} en Javascript)}
+    \resitem{Développement de nombreux composants (génériques ou spécifiques à un projet) pour le portail web de visualisation de données du CeNTAI reposant sur l'utilisation d'\emph{Elasticsearch}}
+    \resitem{Veille technologique sur le développement web moderne afin de faire évoluer et améliorer le portail web du CeNTAI en termes de génie logiciel et de composants de visualisation}
+  \end{itemize}
+
+\item
+
+  \ressubheading{Université des Sciences et Technologies Bordeaux 1, LaBRI}{Talence}{Ingénieur de recherche contractuel}{Mars 2013 - Août 2013}
+  \begin{itemize}
+    \resitem{Assistance technique sur plusieurs projets de recherche}
+    \resitem{Maintenance et évolution de la plateforme de visualisation \emph{Tulip}}
+  \end{itemize}
+
+\item
+  \ressubheading{Université des Sciences et Technologies Bordeaux 1, LaBRI}{Talence}{Attaché temporaire d'enseignement et de recherche}{Septembre 2012 - Février 2013}
+  \begin{itemize}
+    \resitem{Activité d'enseignements à l'IUT d'Informatique de Bordeaux 1}
+    \resitem{Matières enseignées : }
+    \begin{itemize}
+      \resitem{ASR1 (Utilisation des Systèmes Informatiques)}
+      \resitem{AP1 (Algorithmique et Programmation)}
+    \end{itemize}
+    \resitem{Audience: étudiants en 1ère année de DUT d'Informatique}
+    \resitem{Volume horaire : 96h, équivalent TD}
+  \end{itemize}
+
+  \item
+    \ressubheading{LaBRI}{Talence}{Ingénieur d'études}{Octobre 2008 - Octobre 2009}
+    \begin{itemize}
+      \resitem{Travail autour de la plateforme de visualisation \emph{Tulip}}
+      \resitem{Développement de nouveaux composants de visualisation visant à enrichir la plateforme}
+    \end{itemize}
+
+  \item
+    \ressubheading{Atos Origin Integration}{Pessac}{Stagiaire}{Avril 2008 - Septembre 2008}
+
+    Immersion opérationelle au sein d'une Tierce Maintenance Applicative dans le cadre du projet ERP New Convergence pour le compte de France Telecom.
+
+  \item
+    \ressubheading{I2S}{Pessac}{Stagiaire}{Juillet 2007 - Août 2007}
+
+    Elaboration et implémentation d'algorithmes de vision pour la détection et le suivi de cages de but dans un flux vidéo de match de football.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Compétences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item Grande expérience en développement informatique : du logiciel natif à l'application web
+\begin{itemize}
+  \item Langages de programmation : C/C++, Java, Python, JavaScript (\emph{fullstack} : côtés client et serveur), HTML, CSS, Scripts shell Unix, \ldots
+  \item Outils de gestion de version : Subversion, Git, \ldots
+  \item Outils de développement C/C++: CMake, Valgrind, GDB, \ldots
+  \item Outils de développement JavaScript : Grunt, Gulp, Webpack, Npm, Emscripten, \ldots
+  \item Bibliothèques/API C/C++ : Qt, OpenGL, Tulip, Python, \ldots
+  \item Bibliothèques/API JavaScript : Angular, Lodash, Bootstrap, D3, WebGL, Leaflet, \ldots
+  \item Technologies Big Data : Hadoop, HDFS, Spark, Elasticsearch, Kafka, \ldots
+  \item Outils de documentation : Sphinx, Markdown, doxygen, \LaTeX, \ldots
+  \item IDE : Qt Creator, Eclipse, Atom, \ldots
+  \item Expert en développement C++ multi-plateformes (Linux, MacOS, Windows, Web)
+\end{itemize}
+\item Connaissances approfondies des techniques de visualisation de données : de la théorie à l'implémentation
+\begin{itemize}
+  \item Thèse réalisée sur le thème de la Visualisation d'Information
+  \item Nombreuses contributions de recherche sur le sujet (plus d'une dizaine de publications dont un papier cité 82 fois)
+  \item Développement et maintenance de plusieurs systèmes de visualisation, en particulier le framework \emph{open source} \emph{Tulip} dédié à l'analyse et la visualisation de grands graphes
+\end{itemize}
+\item Grand intérêt pour l'infographie et l'exploitation du processeur graphique (expert OpenGL/WebGL)
+\item Grande connaissance du monde de l'\emph{open source}
+\begin{itemize}
+  \item utilisation quotidienne d'une distribution GNU/Linux (sécurité, stabilité, productivité)
+  \item grande expérience dans la récupération, l'installation des dépendances et la construction de logiciels \emph{open source}
+  \item contributeur dans différents projets \emph{open source}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Publications scientifiques (indice h: 8)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ressubheading{Revues internationales avec comité de lecture et actes}{}{}{}
+
+\begin{itemize}
+ \item David AUBER, Charles HUET, Antoine LAMBERT, Benjamin RENOUST, Arnaud SALLABERY et Agnes SAULNIER. "Gospermap : Using a gosper curve for laying out hierarchical data". Dans : \underline{IEEE Transactions on Visualization and Computer Graphics} 19.11 (2013), p. 1820-1832
+ \item Antoine LAMBERT, Jonathan DUBOIS et Romain BOURQUI. "Pathway Preserving Representation of Metabolic Networks". Dans : \underline{Computer Graphics Forum} 30.3 (2011), p. 1021-1030
+ \item Antoine LAMBERT, Romain BOURQUI et David AUBER. "Winding Roads : Routing edges into bundles". Dans : \underline{Computer Graphics Forum} 29.3 (2010), p. 853-862
+\end{itemize}
+
+\ressubheading{Conférences internationales avec comité de lecture et actes}{}{}{}
+
+\begin{itemize}
+  \item Antoine LAMBERT et David AUBER. "Graphs analysis and visualization with Tulip-Python". Poster présenté à \underline{5th European Conference for Scientists using Python (EuroSciPy 2012)}. 2012
+  \item Antoine LAMBERT, François QUEYROI et Romain BOURQUI. "Visualizing patterns in Node-link Diagrams". Dans: \underline{Proceedings of the 16th International Conference on Information Visualisation}. IV'12. IEEE Computer Society, 2012, p. 48-53
+  \item Antoine LAMBERT, Romain BOURQUI et David AUBER. "3D Edge Bundling for Geographical Data Visualization". Dans : \underline{Information Visualisation (IV), 2010 14th International Conference}. IEEE Computer Society, 2010, p 329-335
+  \item Antoine LAMBERT, David AUBER et Guy MELANÇON. "Living Flows : Enhanced Exploration of Edge-Bundled Graphs Based on GPU-Intensive Edge Rendering". Dans : \underline{Information Visualisation (IV), 2010 14th International Conference}. IEEE Computer Society, 2010, p 523-530
+\end{itemize}
+
+\ressubheading{Chapitre de livre}{}{}{}
+
+  \begin{itemize}
+    \item Antoine LAMBERT, Romain BOURQUI et David AUBER. "Graph visualization for geography". Dans : \underline{Methods for Multilevel Analysis and Visualisation of Geographical Networks}, p. 81-102. Springer Netherlands
+  \end{itemize}
+
+\ressubheading{Rapport de recherche}{}{}{}
+
+  \begin{itemize}
+    \item David AUBER, Daniel ARCHAMBAULT, Romain BOURQUI, Antoine LAMBERT, Morgain MATHIAUT, Patrick MARY, Maylis DELEST, Jonathan DUBOIS, Guy MELANÇON. "The Tulip 3 Framework : A Scalable Software Library for Information Visualization Applications". Rap. tech. RR-7860. INRIA, 2012, p. 31
+  \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Contributions à des projets \emph{open source}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item \ressubheading{Tulip \url{http://www.tulip-software.org}}{C++, Python, OpenGL}{Framework dédié à l'analyse, au dessin et à la visualisation de grands graphes}{Depuis 2008}
+
+\begin{itemize}
+  \item Logiciel développé au sein du LaBRI à Bordeaux, très reconnu dans la communauté de la visualisation de graphes, disponible pour Windows, MacOS, Linux (paquets binaires disponibles sous Debian), FreeBSD
+  \item Système stable et performant : plus de 15 ans de développement à son actif
+  \item Contributions personnelles:
+  \begin{itemize}
+    \item intégration des algorithmes de dessin de graphes de la bibliothèque OGDF (\emph{Open Graph Drawing Framework}) \url{http://www.ogdf.net}
+    \item développement du module Python pour Tulip et intégration d'un IDE Python plus un moteur d'exécution de script dans le logiciel \url{https://pypi.python.org/pypi/tulip-python}
+    \item développement de nombreux plugins d'algorithmes, de visualisations et d'interactions : Delaunay triangulation, Voronoï diagram, Edge bundling, Polyomino Packing, Google Maps view, Histogram view, Parallel Coordinates view, Pixel oriented view, Scatter Plot view, Fisheye interactor, Graph Splatting Interactor, Lasso Selection interactor, Magnifying Glass interactor, Neighborhood Highlighter interactor
+    \item portage en Javascript du framework via le compilateur \emph{Emscripten} pour la visualisation de grands graphes sur le Web \url{https://github.com/tulip5/tulip/tree/master/library/tulip-javascript} \url{https://anlambert.github.io/tulipjs/tulip_web.html}
+  \end{itemize}
+\end{itemize}
+
+\item \ressubheading{Emscripten \url{https://github.com/kripken/emscripten}}{JavaScript, Python, C/C++}{Compilateur C/C++ vers JavaScript}{Depuis 2013}
+
+\item \ressubheading{Auditwheel \url{https://github.com/pypa/auditwheel}}{Python}{Outil pour la distribution de modules Python binaires sous Linux}{Depuis 2016}
+
+\end{itemize}
+
+\end{document}
